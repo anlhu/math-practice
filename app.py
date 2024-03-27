@@ -20,6 +20,6 @@ class App(tk.Tk):
   
 		self.show_frame(MenuPage)
   
-	def show_frame(self, cont):
-		frame = self.frames[cont]
+	def show_frame(self, nextFrame):
+		frame = self.frames[nextFrame]
 		frame.tkraise()
