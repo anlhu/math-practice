@@ -1,2 +1,2 @@
 # math-practice
-Flutter app to practice mental math
+Python app to practice mental math
