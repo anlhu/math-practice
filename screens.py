@@ -42,3 +42,9 @@ class GamePage(tk.Frame):
 		self.problem, self.answer = self.questionGen.getQuestionAndAnswer()
 		question = tk.Label(self, text=self.problem+" =", font=("Helvetica", 72))
 		question.pack(pady=80)
+
+		# TODO
+		# Make a Drawable Canvas. When the mouse leaves it, turn it into a picture
+		# Connect the picture to an ML trained to turn pictures of numbers into numbers
+		# verify or reject the answer. Either show a new question or clear the canvas
+		# maybe add some kind of timer to it
