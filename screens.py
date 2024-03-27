@@ -40,5 +40,5 @@ class GamePage(tk.Frame):
 		start_button.pack(pady=10)
 
 		self.problem, self.answer = self.questionGen.getQuestionAndAnswer()
-		question = tk.Label(self, text=self.problem+" =", font=("Helvetica", 48))
+		question = tk.Label(self, text=self.problem+" =", font=("Helvetica", 72))
 		question.pack(pady=80)
