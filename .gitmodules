@@ -1,0 +1,3 @@
+[submodule "MNIST-Classifier"]
+	path = MNIST-Classifier
+	url = https://github.com/tohinz/MNIST-Classifier.git
