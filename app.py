@@ -27,7 +27,7 @@ class App(tk.Tk):
 		frame = self.frames[nextFrame]
 		frame.tkraise()
 
-	def reset_game(self):
+	def reset_game_frame(self):
 		del self.frames[GamePage]
 		self.frames[GamePage] = GamePage(self.container, self)
 		self.frames[GamePage].grid(row = 0, column = 0, sticky ="nsew")

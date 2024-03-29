@@ -20,7 +20,7 @@ class MenuPage(tk.Frame):
 				checkbox = tk.Checkbutton(self, text=difficulty,variable=self.controller.selections[difficulty+category], onvalue=1, offvalue=0, command=lambda difficulty=difficulty, category=category: print(self.controller.selections[difficulty+category], self.controller.selections[difficulty+category].get()))
 				checkbox.pack(pady=1)
 
-		command = lambda : self.controller.reset_game() or self.controller.show_frame(GamePage)
+		command = lambda : self.controller.reset_game_frame() or self.controller.show_frame(GamePage)
 		start_button = tk.Button(self, text="Start", font=("Helvetica", 20), command=command)
 		start_button.pack(pady=20)
 
@@ -43,6 +43,9 @@ class GamePage(tk.Frame):
 		question = tk.Label(self, text=self.problem+" =", font=("Helvetica", 72))
 		question.pack(pady=80)
 
+		reset_command = lambda : self.controller.reset_game_frame() or self.controller.show_frame(GamePage)
+		new_button = tk.Button(self, text="Start", font=("Helvetica", 20), command=reset_command)
+		new_button.pack(pady=20)
 		# TODO
 		# Make a Drawable Canvas. When the mouse leaves it, turn it into a picture
 		# Connect the picture to an ML trained to turn pictures of numbers into numbers
