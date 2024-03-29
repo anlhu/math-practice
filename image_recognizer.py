@@ -1,5 +1,8 @@
 import pytesseract
 from PIL import Image, ImageChops
+# import keras
+# from keras.preprocessing import image
+
 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\andre\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
 
 class ImageRecognizer:
@@ -32,10 +35,19 @@ class ImageRecognizer:
         y_offset = (target_size - new_height) // 2
         square_image.paste(img_resized, (x_offset, y_offset))
         return square_image
+    
+    # def predict(img_path):
+    #     model = keras.models.load_model("weights.hdf5")
+    #     img_generator = image.ImageDataGenerator(preprocessing_function=lambda img: img/255.0)
+    #     validation_generator = img_generator.flow_from_directory(directory=img_path, target_size=(28,28), shuffle=False,
+    #                                                             batch_size=1, color_mode="grayscale",)
 
     def imageToNumbers(self, canvasImage):
         trimmed_image = self.trim(canvasImage)
         transformed_image = self.transformToSize(trimmed_image)
+        image_name = 'answer_drawing.png'
+        transformed_image.save(image_name)
+        # number = self.predict(image_name)
         number = self.recognizer.image_to_string(transformed_image, config='--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789').strip()
         print(number)
         return number
