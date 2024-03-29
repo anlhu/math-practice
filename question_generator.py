@@ -66,7 +66,7 @@ class QuestionGenerator():
 			exponent = 2
 		return (f"{exponent}√{base**exponent}", base)
 	
-	def _getRandomQuestion(self):
+	def getQuestionAndAnswer(self):
 		difficulty, category = self._getRandomDifficultyAndCategory()
 		difficult = difficulty != "Basic"
 
@@ -80,6 +80,3 @@ class QuestionGenerator():
 		}
 
 		return functionMap[category](difficult)
-
-	def getQuestionAndAnswer(self):
-		return self._getRandomQuestion()
